@@ -4,7 +4,7 @@ Seconda Milestone: Attraverso l’utilizzo di axios: al caricamento della pagina
 Bonus: Attraverso un’altra chiamata api, filtrare gli album per genere. -->
 
 <?php 
-    require __DIR__ . '/db/dbDischi.php'; 
+    require __DIR__ . '/db/db.php'; 
 ?>
 
 <!DOCTYPE html>
@@ -32,6 +32,24 @@ Bonus: Attraverso un’altra chiamata api, filtrare gli album per genere. -->
     <title>Document</title>
 </head>
 <body>
-    
+    <div id="app">
+        <main>
+            <div class="container mt-5">
+                <div class="row row-cols-5 g-3">
+                    <div v-for="disco in arrayFiltrato" class="col">
+                        <div class="card">
+                            <img :src="disco.poster" class="card-img-top" alt="album cover">
+                            <h5 class="card-title">{{disco.title}}</h4>
+                            <p class="card-text">{{disco.author}}</p>
+                            <p class="card-text">{{disco.genre}}</p>
+                            <p class="card-text">{{disco.year}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
