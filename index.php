@@ -33,6 +33,14 @@ Bonus: Attraverso un’altra chiamata api, filtrare gli album per genere. -->
 </head>
 <body>
     <div id="app">
+        <header>
+            <div class="container d-flex justify-content-center">
+                <select name="genre" id="genre" @change="filterGenre" v-model="genere">
+                    <option value="" disabled selected>Seleziona un genere</option>
+                    <option v-for="genre in arrayGeneri" :value="genre">{{genre}}</option>
+                </select>
+            </div>
+        </header>
         <main>
             <div class="container mt-5">
                 <div class="row row-cols-5 g-3">

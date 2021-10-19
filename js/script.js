@@ -23,5 +23,18 @@ const app = new Vue({
             });
         })
     },
+    methods: {
+        filterGenere(){
+            if(this.genere){
+                this.arrayFiltrato = [];
+                this.arrayFiltrato = this.arrayDischi.filter((disco) => {
+                    return disco.genre == this.genere;
+                });
+            }
+            else {
+                this.arrayFiltrato = this.arrayDischi;
+            }
+        }
+    }
 
 });
